@@ -20,4 +20,4 @@ Your system should have these two things installed in it
 Shaikh Mahbub Abbas, ( _mahbubabbas @gmail.com_ )
 
 ## License
-It's absolutely open to all esteemed members of LIET and others :smiley:
+It's absolutely free for all esteemed members of LIET and others :smiley:
