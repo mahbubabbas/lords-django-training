@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  {% load static %}
+  <link rel="stylesheet" href='{% static "/styles.css" %}'>
+</head>
+
+<body>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/list">List</a></li>
+  </ul>
+
+  {% block content %}
+  {% endblock %}
+</body>
+
+<footer>
+  Copyright (C) 2023, Django Club of LORDS.
+</footer>
+
+</html>
