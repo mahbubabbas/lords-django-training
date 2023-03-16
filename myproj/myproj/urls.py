@@ -22,5 +22,6 @@ from day3_models import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index),
-    path('list/', views.list)
+    path('list/', views.list),
+    path('details/<int:id>', views.details)
 ]

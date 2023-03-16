@@ -2,3 +2,12 @@ h1 {
   color: green;
   font-size: 3rem;
 }
+
+table,
+th,
+td {
+  border: 1px solid;
+  border-collapse: collapse;
+  padding: 5px;
+}
+
