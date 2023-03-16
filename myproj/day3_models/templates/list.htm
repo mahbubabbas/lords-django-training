@@ -1,0 +1,11 @@
+{% extends "common.htm" %}
+{% block content %}
+
+<h1>List of all students </h1>
+<ul>
+  {% for s in students %}
+  <li>{{s.roll}} {{s.fname}} {{s.lname}}</li>
+  {% endfor %}
+</ul>
+
+{% endblock %}

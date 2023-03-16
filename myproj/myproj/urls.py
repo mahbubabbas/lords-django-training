@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from day3_common_template import views
+# from day3_common_template import views
+
+from day3_models import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
