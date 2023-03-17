@@ -2,7 +2,7 @@
 {% block content %}
 
 <h1>Add a student here</h1>
-
+{{msg}}
 <form method="POST">
   {% csrf_token %}
   {{form.as_div}}

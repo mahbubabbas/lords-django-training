@@ -18,12 +18,22 @@ def details(req, id):
   return render(req, "details.htm", {'stu': student})  
 
 def add(req):
+  msg = None
   stu_form = StudentForm()
   
   if req.method == 'POST':
-    stu = StudentForm(req.POST)
-    s = Student(fname = stu, lname=stu['lname'])
-    s.save()
-    redirect('/list')
+    form = StudentForm(req.POST)
+    if form.is_valid():
+      try:
+        s = Student(
+          fname=form.cleaned_data['fname'],
+          lname= form.cleaned_data['lname']
+        )
+        s.save()   
+        msg = 'Added successfully, Alhamdulillaah'
+        redirect('/list')
+      except:
+        msg = 'Ah .. some error!'
+        pass
       
-  return render(req, "add.htm", {'form': stu_form})
+  return render(req, "add.htm", {'form': stu_form, 'msg': msg})
