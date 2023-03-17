@@ -1,12 +1,16 @@
 {% extends "common.htm" %}
 {% block content %}
 
-<h1>Add a student here</h1>
-{{msg}}
-<form method="POST">
-  {% csrf_token %}
-  {{form.as_div}}
-  <button type="submit">Add</button>
-</form>
+<div>
+  <h1>Add a student here</h1>
+  {{msg}}
+  <form method="POST">
+    {% csrf_token %}
+    {{form.as_div}}
+    <div class="mt-3">
+      <button type="submit" class="btn btn-primary">Add</button>
+    </div>
+  </form>
 
-{% endblock %}
+  {% endblock %}
+</div>
