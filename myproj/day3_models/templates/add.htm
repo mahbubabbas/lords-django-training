@@ -3,4 +3,10 @@
 
 <h1>Add a student here</h1>
 
+<form method="POST">
+  {% csrf_token %}
+  {{form.as_div}}
+  <button type="submit">Add</button>
+</form>
+
 {% endblock %}

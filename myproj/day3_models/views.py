@@ -1,10 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from django.template import loader
+from day3_models.forms import StudentForm
 
 from day3_models.models import Student
-
-# Create your views here.
 
 def index(req):
   t1 = loader.get_template("index.htm")
@@ -19,5 +18,12 @@ def details(req, id):
   return render(req, "details.htm", {'stu': student})  
 
 def add(req):
-  return render(req, "add.htm")
-
+  stu_form = StudentForm()
+  
+  if req.method == 'POST':
+    stu = StudentForm(req.POST)
+    s = Student(fname = stu, lname=stu['lname'])
+    s.save()
+    redirect('/list')
+      
+  return render(req, "add.htm", {'form': stu_form})
