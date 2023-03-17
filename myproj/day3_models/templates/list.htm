@@ -12,7 +12,10 @@
   <tr>
     <td>{{s.fname}}</td>
     <td>{{s.lname}}</td>
-    <td><a href="/details/{{s.id}}">View</a></td>
+    <td>
+      <a href="/details/{{s.id}}">View</a>
+      <a href="/delete/{{s.id}}">Delete</a>
+    </td>
   </tr>
   {% endfor %}
 </table>

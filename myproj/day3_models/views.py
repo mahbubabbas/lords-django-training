@@ -31,9 +31,23 @@ def add(req):
         )
         s.save()   
         msg = 'Added successfully, Alhamdulillaah'
-        redirect('/list')
+        return redirect('/list')
       except:
         msg = 'Ah .. some error!'
         pass
       
   return render(req, "add.htm", {'form': stu_form, 'msg': msg})
+
+
+def delete(req, id):
+  msg = None
+  try:
+    student = Student.objects.get(id=id)
+    student.delete()
+    msg = 'Successfully deleted!'
+  except:
+    msg = 'Unable to delete'
+
+  students = Student.objects.all()  
+  return render(req, "list.htm", {'students': students, 'msg': msg})
+
