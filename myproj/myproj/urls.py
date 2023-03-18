@@ -26,4 +26,6 @@ urlpatterns = [
     path('details/<int:id>', views.details),
     path('add/', views.add),
     path('delete/<int:id>', views.delete),
+    path('login/', views.mylogin),
+    path('logout/', views.mylogout),
 ]

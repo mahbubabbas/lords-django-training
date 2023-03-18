@@ -1,0 +1,11 @@
+<div>
+  <h1>Login</h1>
+  {{msg}}
+  <form method="POST">
+    {% csrf_token %}
+    {{form.as_div}}
+    <div class="mt-3">
+      <button type="submit" class="btn btn-primary">Login</button>
+    </div>
+  </form>
+</div>
